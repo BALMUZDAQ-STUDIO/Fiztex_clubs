@@ -2,17 +2,21 @@ body {
     background-color: rgb(33, 33, 33);
     color: white;
 }
-.header-text > h1 {
+
+.header-text>h1 {
     font-size: 2.25rem;
     text-align: center;
 }
-.header-text > h2 {
+
+.header-text>h2 {
     font-size: 1.25rem;
     text-align: center;
 }
+
 .schedule {
     display: none;
 }
+
 .active {
     display: block;
 }
