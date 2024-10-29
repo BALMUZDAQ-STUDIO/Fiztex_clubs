@@ -1,10 +1,10 @@
 const data = {
-    "7A": [
+    "7A": {
         "1" : ["Math|101", "Physics|102", "Chemistry|103"],
               ["Biology|104", "History|105", "Geography|106"],
         "2" : ["Math|101", "Physics|102", "Chemistry|103"],
               ["Biology|104", "History|105", "Geography|106"]
-    ],
+    },
     "8B": [
         ["Math|101", "Physics|102", "Chemistry|103"],
         ["Biology|104", "History|105", "Geography|106"]
@@ -21,3 +21,4 @@ function fillTable(classKey, day) {
         console.error("Нет данных для данного класса или дня");
         return;
     }
+}
