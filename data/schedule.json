@@ -1,0 +1,14 @@
+data = {
+  "Monday": {
+    "7": {
+      "A": {
+        "1": ["math", "physic"],
+        "2": ["math", "physic"]
+      },
+      "B": {
+        "1": ["math", "physic"],
+        "2": ["math", "physic"]
+      },
+    },
+  },
+};
