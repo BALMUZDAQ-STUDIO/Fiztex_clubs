@@ -1,0 +1,23 @@
+{
+    "Balmuzdaq": {
+        "name": "Balmuzdaq Commuity",
+        "description": "Сообщество программистов, дизайнеров, интузиастов, и людей которые связаны с IT",
+        "discord-link": "/",
+        "whatsapp-link": "/",
+        "image": "../assets/Balmuzdaq_logo.png"
+    },
+    "Math": {
+        "name": "Math",
+        "description": "Сообщество программистов, дизайнеров, интузиастов, и людей которые связаны с IT",
+        "discord-link": "/",
+        "whatsapp-link": "/",
+        "image": "../assets/Balmuzdaq_logo.png"
+    },
+    "Physics": {
+        "name": "Physics",
+        "description": "Сообщество программистов, дизайнеров, интузиастов, и людей которые связаны с IT",
+        "discord-link": "/",
+        "whatsapp-link": "/",
+        "image": "../assets/Balmuzdaq_logo.png"
+    }
+}
