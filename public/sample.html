@@ -1,309 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Schedule</title>
-        <style>
-            table {
-                border-collapse: collapse;
-                width: 100%;
-            }
-            th,
-            td {
-                border: 1px solid black;
-                padding: 8px;
-                text-align: center;
-            }
-            button {
-                margin: 5px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Class Schedule</h1>
-        <div>
-            <button onclick="displaySchedule('AE', '5', '1')">
-                AE Group 1
-            </button>
-            <button onclick="displaySchedule('AE', '5', '2')">
-                AE Group 2
-            </button>
-            <button onclick="displaySchedule('А', '5', '1')">A Group 1</button>
-            <button onclick="displaySchedule('А', '5', '2')">A Group 2</button>
-        </div>
-        <div id="schedule"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Class Schedule</h1>
+    <div>
+        <button onclick="displaySchedule('AE', '5', '1')">AE Group 1</button>
+        <button onclick="displaySchedule('AE', '5', '2')">AE Group 2</button>
+        <button onclick="displaySchedule('А', '5', '1')">A Group 1</button>
+        <button onclick="displaySchedule('А', '5', '2')">A Group 2</button>
+    </div>
+    <div id="schedule"></div>
 
-        <script>
-            const data = {
-                5: {
-                    AE: {
-                        1: {
-                            monday: [
-                                "Math",
-                                "Physics",
-                                "History",
-                                "Kazakh",
-                                "English",
-                            ],
-                            tuesday: [
-                                "Chemistry",
-                                "Math",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                            ],
-                            wednesday: [
-                                "Biology",
-                                "Math",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                            ],
-                            thursday: [
-                                "Math",
-                                "Geography",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                            ],
-                            friday: [
-                                "Math",
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "Physical Education",
-                            ],
-                            saturday: [
-                                "Math",
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                            ],
-                            sunday: [
-                                "Math",
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                            ],
-                        },
-                        2: {
-                            monday: [
-                                "Physics",
-                                "Chemistry",
-                                "Kazakh",
-                                "English",
-                                "Math",
-                            ],
-                            tuesday: [
-                                "Physics",
-                                "Inform",
-                                "Biology",
-                                "English",
-                                "Math",
-                            ],
-                            wednesday: [
-                                "Physics",
-                                "History",
-                                "Kazakh",
-                                "Math",
-                                "English",
-                            ],
-                            thursday: [
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "Geography",
-                                "Math",
-                            ],
-                            friday: [
-                                "Physics",
-                                "Inform",
-                                "Chemistry",
-                                "English",
-                                "Math",
-                            ],
-                            saturday: [
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "Math",
-                                "Physical Education",
-                            ],
-                            sunday: [
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "Math",
-                                "English",
-                            ],
-                        },
+    <script>
+        const data = {
+            "5": {
+                "AE": {
+                    "1": {
+                        "monday": ["Math", "Physics", "History", "Kazakh", "English"],
+                        "tuesday": ["Chemistry", "Math", "Inform", "Kazakh", "English"],
+                        "wednesday": ["Biology", "Math", "Inform", "Kazakh", "English"],
+                        "thursday": ["Math", "Geography", "Inform", "Kazakh", "English"],
+                        "friday": ["Math", "Physics", "Inform", "Kazakh", "Physical Education"],
+                        "saturday": ["Math", "Physics", "Inform", "Kazakh", "English"],
+                        "sunday": ["Math", "Physics", "Inform", "Kazakh", "English"]
                     },
-                    А: {
-                        1: {
-                            monday: [
-                                "Math",
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                            ],
-                            tuesday: [
-                                "Math",
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                            ],
-                            wednesday: [
-                                "Math",
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                            ],
-                            thursday: [
-                                "Math",
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                            ],
-                            friday: [
-                                "Math",
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                            ],
-                            saturday: [
-                                "Math",
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                            ],
-                            sunday: [
-                                "Math",
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                            ],
-                        },
-                        2: {
-                            monday: [
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                                "Math",
-                            ],
-                            tuesday: [
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                                "Math",
-                            ],
-                            wednesday: [
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                                "Math",
-                            ],
-                            thursday: [
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                                "Math",
-                            ],
-                            friday: [
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                                "Math",
-                            ],
-                            saturday: [
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                                "Math",
-                            ],
-                            sunday: [
-                                "Physics",
-                                "Inform",
-                                "Kazakh",
-                                "English",
-                                "Math",
-                            ],
-                        },
-                    },
+                    "2": {
+                        "monday": ["Physics", "Chemistry", "Kazakh", "English", "Math"],
+                        "tuesday": ["Physics", "Inform", "Biology", "English", "Math"],
+                        "wednesday": ["Physics", "History", "Kazakh", "Math", "English"],
+                        "thursday": ["Physics", "Inform", "Kazakh", "Geography", "Math"],
+                        "friday": ["Physics", "Inform", "Chemistry", "English", "Math"],
+                        "saturday": ["Physics", "Inform", "Kazakh", "Math", "Physical Education"],
+                        "sunday": ["Physics", "Inform", "Kazakh", "Math", "English"]
+                    }
                 },
-            };
-
-            const times = [
-                "8:00 - 8:40",
-                "8:45 - 9:25",
-                "9:35 - 10:15",
-                "10:20 - 11:00",
-                "11:15 - 11:55",
-                "12:05 - 12:45",
-                "12:50 - 13:30",
-            ];
-
-            function displaySchedule(classType, grade, group) {
-                const scheduleContainer = document.getElementById("schedule");
-                scheduleContainer.innerHTML = ""; // Clear previous content
-
-                const classData = data[grade][classType][group];
-                const table = document.createElement("table");
-                const headerRow = document.createElement("tr");
-
-                // Create header row with days of the week
-                const daysOfWeek = [
-                    "monday",
-                    "tuesday",
-                    "wednesday",
-                    "thursday",
-                    "friday",
-                    "saturday",
-                    "sunday",
-                ];
-                headerRow.appendChild(document.createElement("th")); // Empty top-left cell
-                daysOfWeek.forEach((day) => {
-                    const th = document.createElement("th");
-                    th.textContent = day.charAt(0).toUpperCase() + day.slice(1);
-                    headerRow.appendChild(th);
-                });
-                table.appendChild(headerRow);
-
-                // Iterate through groups and create rows for each class period
-                for (let period = 0; period < times.length; period++) {
-                    // Use times array length for periods
-                    const row = document.createElement("tr");
-                    const periodCell = document.createElement("td");
-                    periodCell.textContent = times[period]; // Display the time for each period
-                    row.appendChild(periodCell);
-
-                    // Fill in subjects for each day
-                    daysOfWeek.forEach((day) => {
-                        const td = document.createElement("td");
-                        td.textContent = classData[day][period] || ""; // Prevents undefined error
-                        row.appendChild(td);
-                    });
-
-                    table.appendChild(row);
+                "А": {
+                    "1": {
+                        "monday": ["Math", "Physics", "Inform", "Kazakh", "English"],
+                        "tuesday": ["Math", "Physics", "Inform", "Kazakh", "English"],
+                        "wednesday": ["Math", "Physics", "Inform", "Kazakh", "English"],
+                        "thursday": ["Math", "Physics", "Inform", "Kazakh", "English"],
+                        "friday": ["Math", "Physics", "Inform", "Kazakh", "English"],
+                        "saturday": ["Math", "Physics", "Inform", "Kazakh", "English"],
+                        "sunday": ["Math", "Physics", "Inform", "Kazakh", "English"]
+                    },
+                    "2": {
+                        "monday": ["Physics", "Inform", "Kazakh", "English", "Math"],
+                        "tuesday": ["Physics", "Inform", "Kazakh", "English", "Math"],
+                        "wednesday": ["Physics", "Inform", "Kazakh", "English", "Math"],
+                        "thursday": ["Physics", "Inform", "Kazakh", "English", "Math"],
+                        "friday": ["Physics", "Inform", "Kazakh", "English", "Math"],
+                        "saturday": ["Physics", "Inform", "Kazakh", "English", "Math"],
+                        "sunday": ["Physics", "Inform", "Kazakh", "English", "Math"]
+                    }
                 }
-
-                scheduleContainer.appendChild(table);
             }
-        </script>
-    </body>
+        };
+
+        const times = [
+            "8:00 - 8:40", "8:45 - 9:25", "9:35 - 10:15", "10:20 - 11:00", 
+            "11:15 - 11:55", "12:05 - 12:45", "12:50 - 13:30"
+        ];
+
+        function displaySchedule(classType, grade, group) {
+            const scheduleContainer = document.getElementById('schedule');
+            scheduleContainer.innerHTML = ''; // Clear previous content
+
+            const classData = data[grade][classType][group];
+            const table = document.createElement('table');
+            const headerRow = document.createElement('tr');
+
+            // Create header row with days of the week
+            const daysOfWeek = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+            headerRow.appendChild(document.createElement('th')); // Empty top-left cell
+            daysOfWeek.forEach(day => {
+                const th = document.createElement('th');
+                th.textContent = day.charAt(0).toUpperCase() + day.slice(1);
+                headerRow.appendChild(th);
+            });
+            table.appendChild(headerRow);
+
+            // Iterate through groups and create rows for each class period
+            for (let period = 0; period < times.length; period++) { // Use times array length for periods
+                const row = document.createElement('tr');
+                const periodCell = document.createElement('td');
+                periodCell.textContent = times[period]; // Display the time for each period
+                row.appendChild(periodCell);
+
+                // Fill in subjects for each day
+                daysOfWeek.forEach(day => {
+                    const td = document.createElement('td');
+                    td.textContent = classData[day][period] || ""; // Prevents undefined error
+                    row.appendChild(td);
+                });
+
+                table.appendChild(row);
+            }
+
+            scheduleContainer.appendChild(table);
+        }
+    </script>
+</body>
 </html>
