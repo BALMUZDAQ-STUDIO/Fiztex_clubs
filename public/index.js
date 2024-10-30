@@ -24,6 +24,7 @@ const groupButtonsDiv = document.getElementById("group-buttons");
 let startClass = 7;
 let endClass = 8;
 
+
 const times = [
   "8:00 - 8:40", "8:45 - 9:25", "9:35 - 10:15",
   "10:20 - 11:00", "11:15 - 11:55", "12:05 - 12:45",
@@ -134,8 +135,7 @@ function displaySchedule(classType, grade, group) {
     const scheduleContainer = document.getElementById("schedule");
     scheduleContainer.innerHTML = ""; // Очищаем предыдущий контент
 
-    const classData = data[grade][classType][group];
-    console.log(classData);
+    const classData = JSON.stringify(data[grade][classType][group]);
     const table = document.createElement("table");
     const headerRow = document.createElement("tr");
 
@@ -167,4 +167,3 @@ function displaySchedule(classType, grade, group) {
 
     scheduleContainer.appendChild(table); // Отображаем таблицу на странице
 }
-console.log(classData);
