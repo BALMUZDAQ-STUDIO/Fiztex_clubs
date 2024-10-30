@@ -1,245 +1,149 @@
 {
-    "5": {
-        "AE": {
-            "1": {
-                "Monday": [
-                    { "subject": "матем", "room": "А303" },
-                    { "subject": "робот", "room": "3" },
-                    { "subject": "матем", "room": "А303" },
-                    { "subject": "орыс тілі мен әдебиеті", "room": "108" },
-                    { "subject": "қазақ тілі ӨА", "room": "108" },
-                    { "subject": "көркем еңбек", "room": "5" },
-                    { "subject": "программ", "room": "8" }
-                ],
-                "Tuesday": [
-                    { "subject": "қазақ тілі", "room": "203" },
-                    { "subject": "матем", "room": "А303" },
-                    { "subject": "матем", "room": "А303" },
-                    { "subject": "жаратылыстану", "room": "301" },
-                    { "subject": "дене шынықтыру", "room": "1" },
-                    { "subject": "орыс тілі мен әдебиеті", "room": "108" },
-                    { "subject": "кл. час", "room": "307" }
-                ],
-                "Wednesday": [
-                    { "subject": "тарих", "room": "307" },
-                    { "subject": "қазақ тілі ӨА", "room": "308" },
-                    { "subject": "матем", "room": "А303" },
-                    { "subject": "программ", "room": "14" },
-                    { "subject": "дене шынықтыру", "room": "1" },
-                    { "subject": "информатика", "room": "14" },
-                    { "subject": "ағылшын ША", "room": "А203" }
-                ],
-                "Thursday": [
-                    { "subject": "робот", "room": "3" },
-                    { "subject": "ағылшын ША", "room": "А203" },
-                    { "subject": "қазақ тілі ӨА", "room": "207" },
-                    { "subject": "жаратылыстану", "room": "301" },
-                    { "subject": "көркем еңбек", "room": "307" },
-                    { "subject": "тарих", "room": "201" },
-                    { "subject": "дене шынықтыру", "room": "1" }
-                ],
-                "Friday": [
-                    { "subject": "матем", "room": "А303" },
-                    { "subject": "матем", "room": "А303" },
-                    { "subject": "ағылшын", "room": "А203" },
-                    { "subject": "қазақ тілі ӨА", "room": "201" },
-                    { "subject": "орыс тілі", "room": "215" },
-                    { "subject": "тарих", "room": "203" },
-                    { "subject": "матем", "room": "А303" }
-                ]
-            }
-        },
-        "A": {
-            "1": {
-                "Monday": [
-                    { "subject": "спец курс ИЖ", "room": "А102" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "физ-ра", "room": "1" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "программ.НА", "room": "14" },
-                    { "subject": "история", "room": "А103" },
-                    { "subject": "англ.яз ША", "room": "А203" }
-                ],
-                "Tuesday": [
-                    { "subject": "спец курс ИЖ", "room": "А102" },
-                    { "subject": "каз.яз МЖ", "room": "16" },
-                    { "subject": "история", "room": "А103" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "естествознание", "room": "301" },
-                    { "subject": "англ.яз ША", "room": "А203" }
-                ],
-                "Wednesday": [
-                    { "subject": "робот.", "room": "3" },
-                    { "subject": "каз.яз МЖ", "room": "301" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "физ-ра", "room": "1" }
-                ],
-                "Thursday": [
-                    { "subject": "каз.яз МЖ", "room": "302" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "музыка", "room": "5" },
-                    { "subject": "программ. НА", "room": "113" },
-                    { "subject": "физ-ра", "room": "1" },
-                    { "subject": "англ.яз ША", "room": "А203" },
-                    { "subject": "естествознание", "room": "301" }
-                ],
-                "Friday": [
-                    { "subject": "каз.яз МЖ", "room": "203" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "история", "room": "А103" },
-                    { "subject": "худ.труд", "room": "5" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "информат АТ", "room": "115" },
-                    { "subject": "кл.час", "room": "306" }
-                ]
-            },
-            "2": {
-                "Monday": [
-                    { "subject": "спец курс ИЖ", "room": "А102" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "физ-ра", "room": "1" },
-                    { "subject": "каз.яз ӨА", "room": "202" },
-                    { "subject": "программ.ЗБ", "room": "113" },
-                    { "subject": "история", "room": "А103" },
-                    { "subject": "матем", "room": "306" }
-                ],
-                "Tuesday": [
-                    { "subject": "спец курс ИЖ", "room": "А102" },
-                    { "subject": "англ.яз", "room": "А204" },
-                    { "subject": "история", "room": "А103" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "каз.яз ӨА", "room": "А102" },
-                    { "subject": "естествознание", "room": "301" },
-                    { "subject": "матем", "room": "306" }
-                ],
-                "Wednesday": [
-                    { "subject": "англ.яз АМ", "room": "303" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "каз.яз ӨА", "room": "А102" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "физ-ра", "room": "1" }
-                ],
-                "Thursday": [
-                    { "subject": "каз.яз ӨА", "room": "303" },
-                    { "subject": "робот.", "room": "3" },
-                    { "subject": "музыка", "room": "5" },
-                    { "subject": "англ.яз", "room": "215" },
-                    { "subject": "физ-ра", "room": "1" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "естествознание", "room": "301" }
-                ],
-                "Friday": [
-                    { "subject": "программир ЗБ", "room": "113" },
-                    { "subject": "информат АТ", "room": "115" },
-                    { "subject": "история", "room": "А103" },
-                    { "subject": "худ.труд", "room": "5" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "кл.час", "room": "306" }
-                ]
-            }
-        },
-        "B": {
-            "1": {
-                "Monday": [
-                    { "subject": "спец курс ИЖ", "room": "А102" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "физ-ра", "room": "1" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "программ.НА", "room": "14" },
-                    { "subject": "история", "room": "А103" },
-                    { "subject": "англ.яз ША", "room": "А203" }
-                ],
-                "Tuesday": [
-                    { "subject": "спец курс ИЖ", "room": "А102" },
-                    { "subject": "каз.яз МЖ", "room": "16" },
-                    { "subject": "история", "room": "А103" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "естествознание", "room": "301" },
-                    { "subject": "англ.яз ША", "room": "А203" }
-                ],
-                "Wednesday": [
-                    { "subject": "робот.", "room": "3" },
-                    { "subject": "каз.яз МЖ", "room": "301" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "физ-ра", "room": "1" }
-                ],
-                "Thursday": [
-                    { "subject": "каз.яз МЖ", "room": "302" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "музыка", "room": "5" },
-                    { "subject": "программ. НА", "room": "113" },
-                    { "subject": "физ-ра", "room": "1" },
-                    { "subject": "англ.яз ША", "room": "А203" },
-                    { "subject": "естествознание", "room": "301" }
-                ],
-                "Friday": [
-                    { "subject": "каз.яз МЖ", "room": "203" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "история", "room": "А103" },
-                    { "subject": "худ.труд", "room": "5" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "информат АТ", "room": "115" },
-                    { "subject": "кл.час", "room": "306" }
-                ]
-            },
-            "2": {
-                "Monday": [
-                    { "subject": "спец курс ИЖ", "room": "А102" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "физ-ра", "room": "1" },
-                    { "subject": "каз.яз ӨА", "room": "202" },
-                    { "subject": "программ.ЗБ", "room": "113" },
-                    { "subject": "история", "room": "А103" },
-                    { "subject": "матем", "room": "306" }
-                ],
-                "Tuesday": [
-                    { "subject": "спец курс ИЖ", "room": "А102" },
-                    { "subject": "англ.яз", "room": "А204" },
-                    { "subject": "история", "room": "А103" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "каз.яз ӨА", "room": "А102" },
-                    { "subject": "естествознание", "room": "301" },
-                    { "subject": "матем", "room": "306" }
-                ],
-                "Wednesday": [
-                    { "subject": "англ.яз АМ", "room": "303" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "каз.яз ӨА", "room": "А102" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "физ-ра", "room": "1" }
-                ],
-                "Thursday": [
-                    { "subject": "каз.яз ӨА", "room": "303" },
-                    { "subject": "робот.", "room": "3" },
-                    { "subject": "музыка", "room": "5" },
-                    { "subject": "англ.яз", "room": "215" },
-                    { "subject": "физ-ра", "room": "1" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "естествознание", "room": "301" }
-                ],
-                "Friday": [
-                    { "subject": "программир ЗБ", "room": "113" },
-                    { "subject": "информат АТ", "room": "115" },
-                    { "subject": "история", "room": "А103" },
-                    { "subject": "худ.труд", "room": "5" },
-                    { "subject": "русс.яз", "room": "201" },
-                    { "subject": "матем", "room": "306" },
-                    { "subject": "кл.час", "room": "306" }
-                ]
-            }
-        }
+  "5": {
+    "AE": {
+      "1": {
+        "Monday": [
+          { "subject": "матем", "room": "А303" },
+          { "subject": "робот", "room": "3" },
+          { "subject": "матем", "room": "А303" },
+          { "subject": "орыс тілі мен әдебиеті", "room": "108" },
+          { "subject": "қазақ тілі ӨА", "room": "108" },
+          { "subject": "көркем еңбек", "room": "5" },
+          { "subject": "программ", "room": "8" }
+        ],
+        "Tuesday": [
+          { "subject": "қазақ тілі", "room": "203" },
+          { "subject": "матем", "room": "А303" },
+          { "subject": "матем", "room": "А303" },
+          { "subject": "жаратылыстану", "room": "301" },
+          { "subject": "дене шынықтыру", "room": "1" },
+          { "subject": "орыс тілі мен әдебиеті", "room": "108" },
+          { "subject": "кл. час", "room": "307" }
+        ],
+        "Wednesday": [
+          { "subject": "тарих", "room": "307" },
+          { "subject": "қазақ тілі ӨА", "room": "308" },
+          { "subject": "матем", "room": "А303" },
+          { "subject": "программ", "room": "14" },
+          { "subject": "дене шынықтыру", "room": "1" },
+          { "subject": "информатика", "room": "14" },
+          { "subject": "ағылшын ША", "room": "А203" }
+        ],
+        "Thursday": [
+          { "subject": "робот", "room": "3" },
+          { "subject": "ағылшын ША", "room": "А203" },
+          { "subject": "қазақ тілі ӨА", "room": "207" },
+          { "subject": "жаратылыстану", "room": "301" },
+          { "subject": "көркем еңбек", "room": "307" },
+          { "subject": "тарих", "room": "201" },
+          { "subject": "дене шынықтыру", "room": "1" }
+        ],
+        "Friday": [
+          { "subject": "матем", "room": "А303" },
+          { "subject": "матем", "room": "А303" },
+          { "subject": "ағылшын", "room": "А203" },
+          { "subject": "қазақ тілі ӨА", "room": "201" },
+          { "subject": "орыс тілі", "room": "215" },
+          { "subject": "тарих", "room": "203" },
+          { "subject": "матем", "room": "А303" }
+        ]
+      }
+    },
+    "A": {
+      "1": {
+        "Monday": [
+          { "subject": "спец курс ИЖ", "room": "А102" },
+          { "subject": "русс.яз", "room": "201" },
+          { "subject": "физ-ра", "room": "1" },
+          { "subject": "матем", "room": "306" },
+          { "subject": "программ.НА", "room": "14" },
+          { "subject": "история", "room": "А103" },
+          { "subject": "англ.яз ША", "room": "А203" }
+        ],
+        "Tuesday": [
+          { "subject": "спец курс ИЖ", "room": "А102" },
+          { "subject": "каз.яз МЖ", "room": "16" },
+          { "subject": "история", "room": "А103" },
+          { "subject": "русс.яз", "room": "201" },
+          { "subject": "матем", "room": "306" },
+          { "subject": "естествознание", "room": "301" },
+          { "subject": "англ.яз ША", "room": "А203" }
+        ],
+        "Wednesday": [
+          { "subject": "робот.", "room": "3" },
+          { "subject": "каз.яз МЖ", "room": "301" },
+          { "subject": "русс.яз", "room": "201" },
+          { "subject": "матем", "room": "306" },
+          { "subject": "матем", "room": "306" },
+          { "subject": "русс.яз", "room": "201" },
+          { "subject": "физ-ра", "room": "1" }
+        ],
+        "Thursday": [
+          { "subject": "каз.яз МЖ", "room": "302" },
+          { "subject": "матем", "room": "306" },
+          { "subject": "музыка", "room": "5" },
+          { "subject": "программ. НА", "room": "113" },
+          { "subject": "физ-ра", "room": "1" },
+          { "subject": "англ.яз ША", "room": "А203" },
+          { "subject": "естествознание", "room": "301" }
+        ],
+        "Friday": [
+          { "subject": "каз.яз МЖ", "room": "203" },
+          { "subject": "матем", "room": "306" },
+          { "subject": "история", "room": "А103" },
+          { "subject": "худ.труд", "room": "5" },
+          { "subject": "русс.яз", "room": "201" },
+          { "subject": "информат АТ", "room": "115" },
+          { "subject": "кл.час", "room": "306" }
+        ]
+      },
+      "2": {
+        "Monday": [
+          { "subject": "спец курс ИЖ", "room": "А102" },
+          { "subject": "русс.яз", "room": "201" },
+          { "subject": "физ-ра", "room": "1" },
+          { "subject": "каз.яз ӨА", "room": "202" },
+          { "subject": "программ.ЗБ", "room": "113" },
+          { "subject": "история", "room": "А103" },
+          { "subject": "матем", "room": "306" }
+        ],
+        "Tuesday": [
+          { "subject": "спец курс ИЖ", "room": "А102" },
+          { "subject": "англ.яз", "room": "А204" },
+          { "subject": "история", "room": "А103" },
+          { "subject": "русс.яз", "room": "201" },
+          { "subject": "каз.яз ӨА", "room": "А102" },
+          { "subject": "естествознание", "room": "301" },
+          { "subject": "матем", "room": "306" }
+        ],
+        "Wednesday": [
+          { "subject": "англ.яз АМ", "room": "303" },
+          { "subject": "матем", "room": "306" },
+          { "subject": "русс.яз", "room": "201" },
+          { "subject": "каз.яз ӨА", "room": "А102" },
+          { "subject": "матем", "room": "306" },
+          { "subject": "русс.яз", "room": "201" },
+          { "subject": "физ-ра", "room": "1" }
+        ],
+        "Thursday": [
+          { "subject": "каз.яз ӨА", "room": "303" },
+          { "subject": "робот.", "room": "3" },
+          { "subject": "музыка", "room": "5" },
+          { "subject": "англ.яз", "room": "215" },
+          { "subject": "физ-ра", "room": "1" },
+          { "subject": "матем", "room": "306" },
+          { "subject": "естествознание", "room": "301" }
+        ],
+        "Friday": [
+          { "subject": "программир ЗБ", "room": "113" },
+          { "subject": "информат АТ", "room": "115" },
+          { "subject": "история", "room": "А103" },
+          { "subject": "худ.труд", "room": "5" },
+          { "subject": "русс.яз", "room": "201" },
+          { "subject": "матем", "room": "306" },
+          { "subject": "кл.час", "room": "306" }
+        ]
+      }
     }
+  }
 }

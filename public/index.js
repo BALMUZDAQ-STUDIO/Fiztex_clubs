@@ -1,12 +1,12 @@
 // Получаем ссылки на HTML-элементы, где будут отображаться кнопки для выбора букв и подгрупп
 import data from "../data/schedule.json"
-import classes from "../data/classes.json"
 const letterButtonsDiv = document.getElementById("letter-buttons");
 const groupButtonsDiv = document.getElementById("group-buttons");
 
 // Определяем диапазон классов (например, с 7 по 8 класс)
 let startClass = 7;
 let endClass = 8;
+
 
 const times = [
   "8:00 - 8:40", "8:45 - 9:25", "9:35 - 10:15",
@@ -119,7 +119,7 @@ function displaySchedule(classType, grade, group) {
     const scheduleContainer = document.getElementById("schedule");
     scheduleContainer.innerHTML = ""; // Очищаем предыдущий контент
 
-    const classData = data[grade][classType][group];
+    const classData = JSON.stringify(data[grade][classType][group]);
     const table = document.createElement("table");
     const headerRow = document.createElement("tr");
 
@@ -151,3 +151,4 @@ function displaySchedule(classType, grade, group) {
 
     scheduleContainer.appendChild(table); // Отображаем таблицу на странице
 }
+console.log(classData);
