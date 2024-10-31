@@ -6,38 +6,28 @@ async function getData() {
 function createButtons(data) {
     let selectedLetter = "AE";
     let selectedGroup = "1";
+    const classGroups = ["1", "2"];
+    const selectText = document.getElementById("current-schedule");
+    const letterButtons = document.getElementById("letter-buttons");
+    const groupButtons = document.getElementById("group-buttons");
     document.querySelectorAll(".class-button").forEach((button) => {
         button.addEventListener("click", () => {
             const selectedClass = button.dataset.class;
-
             const firstClassesLetters = Object.keys(data.first[selectedClass]);
             let secondClassesLetters = [];
             if (selectedClass !== "9") {
                 secondClassesLetters = Object.keys(data.second[selectedClass]);
             }
-
             const classLetters = [
                 ...firstClassesLetters,
                 ...secondClassesLetters,
-            ];
-            const classGroups = ["1", "2"];
-            const selectText = document.getElementById("current-schedule");
-
-            const letterButtons = document.getElementById("letter-buttons");
-            const groupButtons = document.getElementById("group-buttons");
+            ].sort();
             letterButtons.innerHTML = "";
             groupButtons.innerHTML = "";
-
             if (classLetters.indexOf(selectedLetter) !== -1) {
                 selectedLetter = selectedLetter;
             } else {
-                selectedLetter = "AE";
-            }
-
-            if (selectedGroup === "2") {
-                selectedGroup = selectedGroup;
-            } else {
-                selectedGroup = "1";
+                selectedLetter = "A";
             }
 
             if (selectedClass !== "10" && selectedLetter === "AE") {
@@ -98,9 +88,80 @@ function createButtons(data) {
         });
     });
 }
+/*function createButtons(data) {
+    let selectedLetter = "AE";
+    let selectedGroup = "1";
+    const classGroups = ["1", "2"];
+    const selectText = document.getElementById("current-schedule");
+    const letterButtons = document.getElementById("letter-buttons");
+    const groupButtons = document.getElementById("group-buttons");
+
+    document.querySelectorAll(".class-button").forEach(button => {
+        button.addEventListener("click", () => {
+            const selectedClass = button.dataset.class;
+            updateClassLetters(data, selectedClass);
+        });
+    });
+
+    function updateClassLetters(data, selectedClass) {
+        const classLetters = getClassLetters(data, selectedClass);
+        letterButtons.innerHTML = "";
+        groupButtons.innerHTML = "";
+
+        selectedLetter = classLetters.includes(selectedLetter) ? selectedLetter : "A";
+        updateSelectText(selectedClass, selectedLetter, selectedGroup);
+
+        classLetters.forEach(letter => {
+            const letterButton = createButton(letter, () => handleLetterClick(data, selectedClass, letter));
+            letterButtons.appendChild(letterButton);
+        });
+
+        createTable(data, selectedClass, selectedLetter, selectedGroup);
+    }
+
+    function getClassLetters(data, selectedClass) {
+        const firstClassesLetters = Object.keys(data.first[selectedClass]);
+        const secondClassesLetters = selectedClass !== "9" ? Object.keys(data.second[selectedClass]) : [];
+        return [...firstClassesLetters, ...secondClassesLetters].sort();
+    }
+
+    function updateSelectText(selectedClass, letter, group) {
+        selectText.innerText = selectedClass !== "10" && letter === "AE" ? `${selectedClass}${letter}` : `${selectedClass}${letter}-${group}`;
+    }
+
+    function handleLetterClick(data, selectedClass, letter) {
+        selectedLetter = letter;
+        updateSelectText(selectedClass, selectedLetter, selectedGroup);
+
+        groupButtons.innerHTML = "";
+        if (selectedLetter !== "AE" || selectedClass === "10") {
+            classGroups.forEach(group => {
+                const groupButton = createButton(group, () => handleGroupClick(data, selectedClass, selectedLetter, group));
+                groupButtons.appendChild(groupButton);
+            });
+        } else {
+            selectedGroup = "1";
+        }
+
+        createTable(data, selectedClass, selectedLetter, selectedGroup);
+    }
+
+    function handleGroupClick(data, selectedClass, letter, group) {
+        selectedGroup = group;
+        updateSelectText(selectedClass, letter, group);
+        createTable(data, selectedClass, letter, group);
+    }
+
+    function createButton(text, onClick) {
+        const button = document.createElement("button");
+        button.innerText = text;
+        button.addEventListener("click", onClick);
+        return button;
+    }
+}
+*/
 
 function createTable(data, grade, letter, group) {
-    console.log(Object.keys(data.first[grade]));
     let shift, timeOfLessons;
     if (Object.keys(data.first[grade]).includes(letter)) {
         shift = "first";
@@ -129,15 +190,11 @@ function createTable(data, grade, letter, group) {
             "18:50 - 19:30",
         ];
     }
-    console.log("Начало первого урока для вашей смены: ", timeOfLessons[0]);
-    console.log(data[shift][grade][letter][group]);
     const currentGradeData = data[shift][grade][letter][group];
     const table = document.getElementById("schedule-table");
     table.innerHTML = "";
     for (let day in currentGradeData) {
-        console.log(currentGradeData[day]);
         for (let i in currentGradeData[day]) {
-            console.log(currentGradeData[day][i]);
             table.innerHTML += currentGradeData[day][i]["subject"];
             table.innerHTML += currentGradeData[day][i]["room"];
             table.innerHTML += "    ";
