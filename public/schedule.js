@@ -161,6 +161,10 @@ function createButtons(data) {
 }
 */
 
+
+
+
+
 function createTable(data, grade, letter, group) {
     let shift, timeOfLessons;
     if (Object.keys(data.first[grade]).includes(letter)) {
