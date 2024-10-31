@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const config = require("./config.json");
 
 const app = express();
 
@@ -17,6 +18,6 @@ app.get('/clubs', (req, res) => {
 
 
 
-PORT = process.env.PORT || 3000;
+app.listen(config.PORT, () => console.log('Server started on port 3000'));
 
-app.listen(PORT, () => console.log('Server started on port 3000'));
+
