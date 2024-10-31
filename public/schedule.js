@@ -74,23 +74,41 @@ function createButtons(data) {
                                     selectText.innerText = `${selectedClass}${selectedLetter}-${group}`;
                                     selectedGroup = group;
                                 }
+                                createTable(
+                                    data,
+                                    selectedClass,
+                                    selectedLetter,
+                                    selectedGroup
+                                );
                             });
                         });
+                    } else {
+                        selectedGroup = "1";
                     }
-                    createTable(data, selectedClass, selectedLetter, selectedGroup);
-
+                    createTable(
+                        data,
+                        selectedClass,
+                        selectedLetter,
+                        selectedGroup
+                    );
                 });
                 letterButtons.appendChild(letterButton);
             });
-
+            createTable(data, selectedClass, selectedLetter, selectedGroup);
         });
     });
 }
 
-function createTable(data, Class, Letter, Group) {
-    let timeOfLessons;
-    console.log(Object.keys(data.first[Class]));
-    if (Object.keys(data.first[Class]).includes(Letter)) {
+function createTable(data, grade, letter, group) {
+    console.log(Object.keys(data.first[grade]));
+    let shift, timeOfLessons;
+    if (Object.keys(data.first[grade]).includes(letter)) {
+        shift = "first";
+    } else {
+        shift = "second";
+    }
+
+    if (shift === "first") {
         timeOfLessons = [
             "8:00 - 8:40",
             "8:45 - 9:25",
@@ -112,8 +130,24 @@ function createTable(data, Class, Letter, Group) {
         ];
     }
     console.log("Начало первого урока для вашей смены: ", timeOfLessons[0]);
+    console.log(data[shift][grade][letter][group]);
+    const currentGradeData = data[shift][grade][letter][group];
+    const table = document.getElementById("schedule-table");
+    table.innerHTML = "";
+    for (let day in currentGradeData) {
+        console.log(currentGradeData[day]);
+        for (let i in currentGradeData[day]) {
+            console.log(currentGradeData[day][i]);
+            table.innerHTML += currentGradeData[day][i]["subject"];
+            table.innerHTML += currentGradeData[day][i]["room"];
+            table.innerHTML += "    ";
+            table.innerHTML += "<br>";
+        }
+        table.innerHTML += "<br>";
+        table.innerHTML += "<br>";
+        table.innerHTML += "<br>";
+    }
 }
-
 
 async function main() {
     const data = await getData();
