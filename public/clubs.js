@@ -6,7 +6,7 @@ async function getData() {
 
 function createClubs(data) {
     const listClubs = Object.entries(data)
-        .map(([key, item]) => {
+        .map((item) => {
             return `<div class="club-card">
                     <club-card imgSrc="${item.image}" clubName="${item.name}" aboutClub="${item.description}">
                     </club-card>
