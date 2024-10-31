@@ -5,17 +5,16 @@ async function getData() {
 }
 
 function createClubs(data) {
-    const listClubs = Object.entries(data)
-        .map((item) => {
-            return `<div class="club-card">
+    let listClubs = " ";
+    for (let key in data) {
+        let item = data[key];
+        listClubs += `<div class="club-card">
                     <club-card imgSrc="${item.image}" clubName="${item.name}" aboutClub="${item.description}">
                     </club-card>
                 </div>`;
-        })
-        .join(" ");
+    }
 
     document.getElementById("club-cards").innerHTML = listClubs;
-    console.log(data);
 }
 
 async function main() {
