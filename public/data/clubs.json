@@ -7,7 +7,7 @@
         "image": "../assets/Balmuzdaq_logo.png"
     },
     "Клуб любителей настольных игр": {
-        "name": "Math",
+        "name": "boardGames",
         "description": "Сообщество любителей настольных игр",
         "discord-link": "/",
         "whatsapp-link": "/",
