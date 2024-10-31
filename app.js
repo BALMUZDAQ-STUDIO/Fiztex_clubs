@@ -15,7 +15,6 @@ app.get('/', (req, res) => {
 
 app.get('/clubs', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'clubs.html'));
-
 });
 
 app.listen(3000, () => console.log('Server started on port 3000'));
