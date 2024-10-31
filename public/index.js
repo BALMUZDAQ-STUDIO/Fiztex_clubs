@@ -1,5 +1,22 @@
 // Получаем ссылки на HTML-элементы, где будут отображаться кнопки для выбора букв и подгрупп
-import data from "../data/schedule.json"
+var data;
+async function loadData() {
+    try {
+      const response = await fetch('../data/schedule.json');
+      if (!response.ok) {
+        throw new Error('Ошибка загрузки JSON файла');
+      }
+      const jsonData = await response.json();
+      data = jsonData;
+      console.log(jsonData["5"]["A"]["1"]); // Выводим jsonData после получения данных
+    } catch (error) {
+      console.error('Ошибка:', error);
+    }
+  }
+loadData();
+console.log(data);
+const classData = data;
+console.log(classData);
 const letterButtonsDiv = document.getElementById("letter-buttons");
 const groupButtonsDiv = document.getElementById("group-buttons");
 
@@ -19,7 +36,6 @@ const daysOfWeek = [
   "monday", "tuesday", "wednesday", "thursday", 
   "friday", "saturday", "sunday"
 ];
-
 // Элемент для отображения текущего выбранного расписания
 const currentScheduleText = document.getElementById("current-schedule");
 
@@ -42,7 +58,7 @@ document.querySelectorAll(".class-button").forEach((button) => {
         let groups = ["1", "2"];
 
         // Получаем массив букв класса на основе выбранного класса
-        letters = classes[selectedClass];
+        letters = ["AE", "A", "B", "V", "G"];
 
         // Проверяем, есть ли текущая буква в доступных для этого класса
         if (letters.indexOf(currentLetter) !== -1) {
@@ -151,4 +167,3 @@ function displaySchedule(classType, grade, group) {
 
     scheduleContainer.appendChild(table); // Отображаем таблицу на странице
 }
-console.log(classData);
