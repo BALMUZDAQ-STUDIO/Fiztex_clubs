@@ -27,6 +27,7 @@ customElements.define(
 
             // Создаем таблицу
             const table = document.createElement("table");
+            table.className = "main-table";
 
             // Создаем заголовок таблицы
             const thead = `<thead>
@@ -47,15 +48,14 @@ customElements.define(
 
             // Заполнение тела таблицы
             for (let index = 0; index < 7; index++) {
-                tbody += `<tr><td>${index + 1}</td><td>${timeOfLessons[index]}</td>`;
+                tbody += `<tr><td class = "table-num">${index + 1}</td><td class = "table-num">${timeOfLessons[index]}</td>`;
                 for(let day = 0; day<5;day++){
                     tbody+=`<td>${data[days[day]][index]["subject"]} | ${data[days[day]][index]["room"]}</td>`
                 }
-
                 tbody +='</tr>'
 
             }
-            tbody +="</tbody"
+            tbody +="</tbody>";
 
             // Добавляем тело таблицы в таблицу
 

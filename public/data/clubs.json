@@ -4,41 +4,41 @@
         "description": "Сообщество программистов, дизайнеров, интузиастов, и людей которые связаны с IT",
         "discord-link": "/https://discord.gg/ejA87mXn",
         "whatsapp-link": "/",
-        "image": "../assets/Balmuzdaq_logo.png"
+        "image": "../assets/images/Balmuzdaq_logo.png"
     },
     "Клуб любителей настольных игр": {
         "name": "boardGames",
         "description": "Сообщество любителей настольных игр",
         "discord-link": "/",
         "whatsapp-link": "/",
-        "image": "../assets/Balmuzdaq_logo.png"
+        "image": "../assets/images/Balmuzdaq_logo.png"
     },
     "Physics": {
         "name": "Physics",
         "description": "Сообщество программистов, дизайнеров, интузиастов, и людей которые связаны с IT",
         "discord-link": "/",
         "whatsapp-link": "/",
-        "image": "../assets/Balmuzdaq_logo.png"
+        "image": "../assets/images/Balmuzdaq_logo.png"
     },
     "Chemistry": {
         "name": "Physics",
         "description": "Сообщество программистов, дизайнеров, интузиастов, и людей которые связаны с IT",
         "discord-link": "/",
         "whatsapp-link": "/",
-        "image": "../assets/Balmuzdaq_logo.png"
+        "image": "../assets/images/Balmuzdaq_logo.png"
     },
     "Geometry": {
         "name": "Physics",
         "description": "Сообщество программистов, дизайнеров, интузиастов, и людей которые связаны с IT",
         "discord-link": "/",
         "whatsapp-link": "/",
-        "image": "../assets/Balmuzdaq_logo.png"
+        "image": "../assets/images/Balmuzdaq_logo.png"
     },
     "Algebra": {
         "name": "Physics",
         "description": "Сообщество программистов, дизайнеров, интузиастов, и людей которые связаны с IT",
         "discord-link": "/",
         "whatsapp-link": "/",
-        "image": "../assets/Balmuzdaq_logo.png"
+        "image": "../assets/images/Balmuzdaq_logo.png"
     }
 }
