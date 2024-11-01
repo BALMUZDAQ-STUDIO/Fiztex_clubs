@@ -166,7 +166,14 @@ function createButtons(data) {
 
 
 function createTable(data, grade, letter, group) {
-    let shift, timeOfLessons;
+    let shift, timeOfLessons, tableRow, tableChild;
+    days = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+        ];
     if (Object.keys(data.first[grade]).includes(letter)) {
         shift = "first";
     } else {
@@ -195,21 +202,45 @@ function createTable(data, grade, letter, group) {
         ];
     }
     const currentGradeData = data[shift][grade][letter][group];
-    const table = document.getElementById("schedule-table");
-    table.innerHTML = "";
-    for (let day in currentGradeData) {
-        for (let i in currentGradeData[day]) {
-            table.innerHTML += currentGradeData[day][i]["subject"];
-            table.innerHTML += currentGradeData[day][i]["room"];
-            table.innerHTML += "    ";
-            table.innerHTML += "<br>";
-        }
-        table.innerHTML += "<br>";
-        table.innerHTML += "<br>";
-        table.innerHTML += "<br>";
-    }
-}
+    console.log(currentGradeData);
+    let table = `
+    <table>
+        <thead>
+            <tr>
+                <th>N</th>
+                <th>Время</th>
+                <th>Понедельник</th>
+                <th>Вторник</th>
+                <th>Среда</th>
+                <th>Четверг</th>
+                <th>Пятница</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>`;
 
+    document.getElementById("schedule-table").innerHTML = table;
+
+    const tbody = document.querySelector("table tbody");
+
+    for (let index = 0; index < 5; index++) {
+        const tableRow = document.createElement("tr");
+        
+        const customElement = document.createElement("tbody-row");
+        customElement.numOfLesson = index;
+        customElement.day = days[index];
+        customElement.data = currentGradeData.toString();
+        console.log(currentGradeData[days[index]][index]['subject']);
+
+        customElement.time = timeOfLessons[index];
+
+        tableRow.appendChild(customElement);
+        tbody.appendChild(tableRow);
+    }
+
+        
+    document.getElementById("schedule-table").innerHTML = table;
+}
 async function main() {
     const data = await getData();
     createButtons(data);

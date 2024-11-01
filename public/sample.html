@@ -1,51 +1,91 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Выбор класса</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-
+    
+</body>
 <script>
-    const data = {
-  "first": {
-    "5": { "AE": {}, "A": {}, "B": {}, "V": {}, "G": {}, "D": {}, "E": {}, "ZH": {} },
-    "6": { "K": {}, "M": {} },
-    "7": { "N": {}, "O": {}, "P": {} }
-  },
-  "second": {
-    "5": { "L": {}, "R": {}, "S": {} },
-    "6": { "T": {}, "U": {}, "F": {} },
-    "7": { "H": {}, "I": {}, "J": {} }
-  }
-};
+    function createTable(data, grade, letter, group) {
+    let shift, timeOfLessons;
 
-// Функция для объединения данных по классам для обеих смен
-function getCombinedClassLetters(data) {
-  const result = { first: {}, second: {} };
+    // Определяем смену и время занятий
+    if (Object.keys(data.first[grade]).includes(letter)) {
+        shift = "first";
+    } else {
+        shift = "second";
+    }
 
-  // Обработаем обе смены отдельно
-  ["first", "second"].forEach(shift => {
-    let accumulatedLetters = [];
+    timeOfLessons = shift === "first" ? [
+        "8:00 - 8:40",
+        "8:45 - 9:25",
+        "9:35 - 10:15",
+        "10:20 - 11:00",
+        "11:15 - 11:55",
+        "12:05 - 12:45",
+        "12:50 - 13:30",
+    ] : [
+        "14:00 - 14:40",
+        "14:45 - 15:25",
+        "15:35 - 16:15",
+        "16:20 - 17:00",
+        "17:15 - 17:55",
+        "18:05 - 18:45",
+        "18:50 - 19:30",
+    ];
 
-    // Проходим по каждому классу в порядке возрастания
-    Object.keys(data[shift]).sort().forEach(classNum => {
-      // Получаем текущие буквы для класса и добавляем их к предыдущим
-      const currentLetters = Object.keys(data[shift][classNum]);
-      accumulatedLetters = [...accumulatedLetters, ...currentLetters];
-      
-      // Сохраняем в result массив букв без дубликатов для текущей смены и класса
-      result[shift][classNum] = [...new Set(accumulatedLetters)];
+    const currentGradeData = data[shift][grade][letter][group];
+    const tableContainer = document.getElementById("schedule-table");
+    tableContainer.innerHTML = ""; // Очищаем содержимое контейнера
+
+    // Создаем таблицу
+    const table = document.createElement("table");
+    table.classList.add("schedule-table");
+
+    // Создаем заголовок таблицы с днями недели
+    const headerRow = document.createElement("tr");
+    const dayHeader = document.createElement("th");
+    dayHeader.textContent = "Время / День";
+    headerRow.appendChild(dayHeader);
+
+    Object.keys(currentGradeData).forEach(day => {
+        const dayCell = document.createElement("th");
+        dayCell.textContent = day;
+        headerRow.appendChild(dayCell);
     });
-  });
+    table.appendChild(headerRow);
 
-  return result;
+    // Создаем строки для каждого урока
+    timeOfLessons.forEach((time, lessonIndex) => {
+        const row = document.createElement("tr");
+
+        // Вставляем ячейку с временем урока
+        const timeCell = document.createElement("td");
+        timeCell.textContent = time;
+        row.appendChild(timeCell);
+
+        // Вставляем ячейки для каждого дня недели
+        Object.keys(currentGradeData).forEach(day => {
+            const lessonCell = document.createElement("td");
+            const lesson = currentGradeData[day][lessonIndex];
+
+            if (lesson) {
+                lessonCell.innerHTML = `<strong>${lesson.subject}</strong><br>Кабинет: ${lesson.room}`;
+            } else {
+                lessonCell.textContent = "Нет занятия";
+            }
+            row.appendChild(lessonCell);
+        });
+
+        table.appendChild(row);
+    });
+
+    // Добавляем таблицу в контейнер
+    tableContainer.appendChild(table);
 }
 
-// Вывод результата
-console.log(getCombinedClassLetters(data));
-
 </script>
-
-</body>
 </html>

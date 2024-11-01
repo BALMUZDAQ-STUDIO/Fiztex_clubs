@@ -1,9 +1,19 @@
 customElements.define(
-    "table-element",
-    class extends HTMLElement {
+    "tbody-row",
+    class Table extends HTMLElement {
         constructor() {
             super();
 
+        
+            const data = JSON.parse(this.getAttribute("data"));
+            const num = this.getAttribute("numOfLesson");
+            const time = this.getAttribute("time");
+            const day = this.getAttribute("day");
+
+            this.innerHTML = "";
+            this.innerHTML += `<td>${num}</td>`;
+            this.innerHTML += `<td>${time}</td>`;
+            // this.innerHTML += `<td>${data[day][num]['subject']} | ${data[day][num]['room']}</td>`;
             // Что то типо такого разберись что делает таблица эта, и напиши также через компонент
 
       /* <table class="table w-9/12 text-lg text-center whitespace-pre-line">
@@ -27,6 +37,6 @@ customElements.define(
   </tbody>
 </table>
 */
-        }
     }
+}
 );
