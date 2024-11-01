@@ -1,42 +1,69 @@
 customElements.define(
-    "tbody-row",
-    class Table extends HTMLElement {
+    "custom-table",
+    class extends HTMLElement {
         constructor() {
             super();
+            this.render()
 
-        
-            const data = JSON.parse(this.getAttribute("data"));
-            const num = this.getAttribute("numOfLesson");
-            const time = this.getAttribute("time");
-            const day = this.getAttribute("day");
-
+        }
+        render() {
+            // Сброс содержимого
             this.innerHTML = "";
-            this.innerHTML += `<td>${num}</td>`;
-            this.innerHTML += `<td>${time}</td>`;
-            // this.innerHTML += `<td>${data[day][num]['subject']} | ${data[day][num]['room']}</td>`;
-            // Что то типо такого разберись что делает таблица эта, и напиши также через компонент
 
-      /* <table class="table w-9/12 text-lg text-center whitespace-pre-line">
-      <thead>
-      <tr class="text-lg bg-base-200">
-          <th>N</th>
-          <th>{{ $t("time") }}</th>
-          <th :class="day == 1 ? 'active' : ''">{{ $t("monday") }}</th>
-          <th :class="day == 2 ? 'active' : ''">{{ $t("tuesday") }}</th>
-          <th :class="day == 3 ? 'active' : ''">{{ $t("wednesday") }}</th>
-          <th :class="day == 4 ? 'active' : ''">{{ $t("thursday") }}</th>
-          <th :class="day == 5 ? 'active' : ''">{{ $t("friday") }}</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr v-for="(items, index) in filteredData" :key="index">
-          <th>{{ index + 1 }}</th>
-          <th>{{ times[index] }}</th>
-          <td v-for="(item, idx) in items" :key="idx">{{ item }}</td>
-      </tr>
-  </tbody>
-</table>
-*/
+            // Массив с днями
+            const days = [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+            ];
+
+            // Получение атрибутов
+            let data = JSON.parse(this.getAttribute("data"))
+
+            const timeOfLessons = this.getAttribute("timeOfLessons").split(',');
+
+
+            // Создаем таблицу
+            const table = document.createElement("table");
+
+            // Создаем заголовок таблицы
+            const thead = `<thead>
+            <tr>
+                <th>N</th>
+                <th>Время</th>
+                <th>Понедельник</th>
+                <th>Вторник</th>
+                <th>Среда</th>
+                <th>Четверг</th>
+                <th>Пятница</th>
+            </tr>
+        </thead>`;
+
+
+            // Создаем тело таблицы
+            let tbody = "<tbody>";
+
+            // Заполнение тела таблицы
+            for (let index = 0; index < 7; index++) {
+                tbody += `<tr><td>${index + 1}</td><td>${timeOfLessons[index]}</td>`;
+                for(let day = 0; day<5;day++){
+                    tbody+=`<td>${data[days[day]][index]["subject"]} | ${data[days[day]][index]["room"]}</td>`
+                }
+
+                tbody +='</tr>'
+
+            }
+            tbody +="</tbody"
+
+            // Добавляем тело таблицы в таблицу
+
+            // Добавляем таблицу в кастомный элемент
+            table.innerHTML=`${thead}${tbody}`
+            this.appendChild(table);
+        }
     }
-}
 );
+
+

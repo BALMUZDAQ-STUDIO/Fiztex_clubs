@@ -161,19 +161,9 @@ function createButtons(data) {
 }
 */
 
-
-
-
-
 function createTable(data, grade, letter, group) {
     let shift, timeOfLessons, tableRow, tableChild;
-    days = [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-        ];
+    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
     if (Object.keys(data.first[grade]).includes(letter)) {
         shift = "first";
     } else {
@@ -181,64 +171,18 @@ function createTable(data, grade, letter, group) {
     }
 
     if (shift === "first") {
-        timeOfLessons = [
-            "8:00 - 8:40",
-            "8:45 - 9:25",
-            "9:35 - 10:15",
-            "10:20 - 11:00",
-            "11:15 - 11:55",
-            "12:05 - 12:45",
-            "12:50 - 13:30",
-        ];
+        timeOfLessons =
+            "8:00-8:40,8:45-9:25,9:35-10:15,10:20-11:00,11:15-11:55,12:05-12:45,12:50-13:30";
     } else {
-        timeOfLessons = [
-            "14:00 - 14:40",
-            "14:45 - 15:25",
-            "15:35 - 16:15",
-            "16:20 - 17:00",
-            "17:15 - 17:55",
-            "18:05 - 18:45",
-            "18:50 - 19:30",
-        ];
+        timeOfLessons =
+            "14:00-14:40,14:45-15:25,15:35-16:15,16:20-17:00,17:15-17:55,18:05-18:45,18:50-19:30";
     }
-    const currentGradeData = data[shift][grade][letter][group];
-    console.log(currentGradeData);
-    let table = `
-    <table>
-        <thead>
-            <tr>
-                <th>N</th>
-                <th>Время</th>
-                <th>Понедельник</th>
-                <th>Вторник</th>
-                <th>Среда</th>
-                <th>Четверг</th>
-                <th>Пятница</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>`;
+    const currentGradeData = JSON.stringify(data[shift][grade][letter][group])
+        .replaceAll(" ",'')
 
-    document.getElementById("schedule-table").innerHTML = table;
 
-    const tbody = document.querySelector("table tbody");
+    let table = `<custom-table data=${currentGradeData} timeOfLessons=${timeOfLessons}></custom-table>`;
 
-    for (let index = 0; index < 5; index++) {
-        const tableRow = document.createElement("tr");
-        
-        const customElement = document.createElement("tbody-row");
-        customElement.numOfLesson = index;
-        customElement.day = days[index];
-        customElement.data = currentGradeData.toString();
-        console.log(currentGradeData[days[index]][index]['subject']);
-
-        customElement.time = timeOfLessons[index];
-
-        tableRow.appendChild(customElement);
-        tbody.appendChild(tableRow);
-    }
-
-        
     document.getElementById("schedule-table").innerHTML = table;
 }
 async function main() {
