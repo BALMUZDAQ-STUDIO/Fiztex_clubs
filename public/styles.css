@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
 * {
     font-family: "Play", sans-serif;
     font-weight: 700;
     font-style: normal;
 }
+
 body {
     background-color: #F2F8FF;
     color: #207FE6;
@@ -22,7 +24,7 @@ body {
     text-align: center;
 }
 
-.main-line{
+.main-line {
     background-color: #060606;
     color: #060606;
     margin: 0;
@@ -30,9 +32,10 @@ body {
     width: 100%;
     height: 5px;
 }
+
 .class-button,
 .group-button,
-.letter-button{
+.letter-button {
     margin-top: 10px;
     width: 55px;
     height: 55px;
@@ -46,20 +49,23 @@ body {
     margin-right: 5px;
     transition: 0.3s;
 }
+
 .class-button:hover,
 .group-button:hover,
-.letter-button:hover{
+.letter-button:hover {
     background-color: #207FE6;
-    color: #1D1D1D;
+    color: #fff;
     opacity: 1;
 }
+
 .class-button.active,
 .group-button.active,
 .letter-button.active {
     background-color: #207FE6;
-    color: #1D1D1D;
+    color: #fff;
     opacity: 1;
 }
+
 .main-table {
     margin: 0 auto;
     border-collapse: collapse;
@@ -67,11 +73,14 @@ body {
     color: #3a3a3a;
     font-size: 18px;
 }
+
 .main-table thead {
     background-color: #5fadffe8;
     color: #3a3a3a;
 }
-.main-table th, .main-table td {
+
+.main-table th,
+.main-table td {
     padding: 18px;
     text-align: center;
     vertical-align: middle;
@@ -80,6 +89,7 @@ body {
 .main-table tr:not(:last-child) {
     border-bottom: 1px solid #1D1D1D;
 }
+
 .class-buttons,
 .letter-buttons,
 .group-buttons {
@@ -87,6 +97,7 @@ body {
     max-width: max-content;
     margin: 15px auto;
 }
+
 .result-schedule {
     font-size: 30px;
     background-color: #207FE6;
@@ -98,7 +109,8 @@ body {
     padding-top: 15px;
     margin-bottom: 15px;
 }
-.table-num{
+
+.table-num {
     font-size: 23px;
     font-weight: bold;
     color: #060606;

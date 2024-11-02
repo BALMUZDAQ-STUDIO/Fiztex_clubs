@@ -3,8 +3,7 @@ customElements.define(
     class extends HTMLElement {
         constructor() {
             super();
-            this.render()
-
+            this.render();
         }
         render() {
             // Сброс содержимого
@@ -16,14 +15,13 @@ customElements.define(
                 "Tuesday",
                 "Wednesday",
                 "Thursday",
-                "Friday"
+                "Friday",
             ];
 
             // Получение атрибутов
-            let data = JSON.parse(this.getAttribute("data"))
+            let data = JSON.parse(this.getAttribute("data"));
 
-            const timeOfLessons = this.getAttribute("timeOfLessons").split(',');
-
+            const timeOfLessons = this.getAttribute("timeOfLessons").split(",");
 
             // Создаем таблицу
             const table = document.createElement("table");
@@ -42,28 +40,27 @@ customElements.define(
             </tr>
         </thead>`;
 
-
             // Создаем тело таблицы
             let tbody = "<tbody>";
 
-            // Заполнение тела таблицы
             for (let index = 0; index < 7; index++) {
-                tbody += `<tr><td class = "table-num">${index + 1}</td><td class = "table-num">${timeOfLessons[index]}</td>`;
-                for(let day = 0; day<5;day++){
-                    tbody+=`<td>${data[days[day]][index]["subject"]} | ${data[days[day]][index]["room"]}</td>`
+                tbody += `<tr><td class = "table-num">${
+                    index + 1
+                }</td><td class = "table-num">${timeOfLessons[index]}</td>`;
+                for (let day = 0; day < 5; day++) {
+                    tbody += `<td>${data[days[day]][index]["subject"]} | ${
+                        data[days[day]][index]["room"]
+                    }</td>`;
                 }
-                tbody +='</tr>'
-
+                tbody += "</tr>";
             }
-            tbody +="</tbody>";
+            tbody += "</tbody>";
 
             // Добавляем тело таблицы в таблицу
 
             // Добавляем таблицу в кастомный элемент
-            table.innerHTML=`${thead}${tbody}`
+            table.innerHTML = `${thead}${tbody}`;
             this.appendChild(table);
         }
     }
 );
-
-
