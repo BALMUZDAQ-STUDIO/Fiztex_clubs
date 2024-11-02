@@ -12457,20 +12457,32 @@
           ],
           "Tuesday": [
             {
-              "subject": "информат ЕЕ",
-              "room": "14"
+              "subject": "матем",
+              "room": "304"
             },
             {
               "subject": "матем",
               "room": "304"
             },
             {
-              "subject": "кл.час",
-              "room": "217"
+              "subject": "физика ИТ",
+              "room": "302"
             },
             {
-              "subject": "кл.час",
-              "room": "217"
+              "subject": "матем",
+              "room": "304"
+            },
+            {
+              "subject": "биология",
+              "room": "315"
+            },
+            {
+              "subject": "биология",
+              "room": "315"
+            },
+            {
+              "subject": "история",
+              "room": "106"
             }
           ],
           "Wednesday": [
