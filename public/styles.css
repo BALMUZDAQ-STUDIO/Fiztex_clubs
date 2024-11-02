@@ -12,25 +12,27 @@ body {
     padding: 0;
     margin: 0;
 }
-
+.header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
 .header-text>h1 {
     font-size: 40px;
     font-weight: 900;
     text-align: center;
+    flex: 1;
+    margin: 0;
+    padding: 0;
 }
-
-.header-text>h2 {
-    font-size: 24px;
+.subtext {
     text-align: center;
 }
 
-.main-line {
-    background-color: #060606;
-    color: #060606;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 5px;
+.subtext h2 {
+    font-size: 24px;
+    margin: 20px 0;
 }
 
 .class-button,
@@ -113,5 +115,245 @@ body {
 .table-num {
     font-size: 23px;
     font-weight: bold;
+    color: #060606;
+}
+
+.hamburger {
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    cursor: pointer;
+}
+
+.menu {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000000;
+    width: fit-content;
+    display: flex;
+    list-style: none;
+}
+  
+.menu a {
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+  
+.menu .link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 36px;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+  
+.menu .link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0a3cff;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+  
+.menu .link svg {
+    width: 14px;
+    height: 14px;
+    fill: #000000;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+  
+.menu .item {
+    position: relative;
+}
+  
+.menu .item .submenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    border-radius: 0 0 16px 16px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #cccccc;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px);
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1;
+    pointer-events: none;
+    list-style: none;
+}
+  
+.menu .item:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+    border-top: transparent;
+    border-color: #0a3cff;
+}
+  
+.menu .item:hover .link {
+    color: #ffffff;
+    border-radius: 16px 16px 0 0;
+}
+  
+.menu .item:hover .link::after {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+  
+.menu .item:hover .link svg {
+    fill: #ffffff;
+    transform: rotate(-180deg);
+}
+  
+.submenu .submenu-item {
+    width: 100%;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+  
+.submenu .submenu-link {
+    display: block;
+    padding: 12px 0;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+  
+.submenu .submenu-item:last-child .submenu-link {
+    border-bottom: none;
+}
+  
+.submenu .submenu-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    width: 100%;
+    height: 100%;
+    background-color: #0a3cff;
+    z-index: -1;
+    transform-origin: left;
+    transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+  
+.submenu .submenu-link:hover:before {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+  
+.submenu .submenu-link:hover {
+    color: #ffffff;
+}
+
+.submenu-button {
+    border: 0;
+    background-color: transparent;
+    padding: 12px 0;
+}
+
+body.dark-theme {
+    background-color: #1D1D1D;
+    color: #207FE6;
+    padding: 0;
+    margin: 0;
+}
+body.dark-theme .class-button,
+body.dark-theme .group-button,
+body.dark-theme .letter-button {
+    margin-top: 10px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 0;
+    color: #1D1D1D;
+    font-size: 20px;
+    background-color: #fff;
+    opacity: 0.65;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: 0.3s;
+}
+
+body.dark-theme .class-button:hover,
+body.dark-theme .group-button:hover,
+body.dark-theme .letter-button:hover {
+    background-color: #207FE6;
+    color: #fff;
+    opacity: 1;
+}
+
+body.dark-theme .class-button.active,
+body.dark-theme .group-button.active,
+body.dark-theme .letter-button.active {
+    background-color: #207FE6;
+    color: #fff;
+    opacity: 1;
+}
+
+body.dark-theme .main-table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 95%;
+    color: #ffffffc5;
+    font-size: 18px;
+}
+
+body.dark-theme .main-table thead {
+    background-color: #5fadffe8;
+    color: #ffffffc5;
+}
+
+body.dark-theme .main-table tr:not(:last-child) {
+    border-bottom: 1px solid #fff;
+}
+
+body.dark-theme .table-num {
+    font-size: 23px;
+    font-weight: bold;
+    color: #fff;
+}
+
+body.dark-theme .menu .link svg {
+    width: 14px;
+    height: 14px;
+    fill: #fff;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+body.dark-theme .menu .link{
+    color: #fff;
+}
+
+body.dark-theme .menu .item:hover .link svg {
+    fill: #060606;
+    transform: rotate(-180deg);
+}
+
+body.dark-theme .menu .item:hover .link {
+    color: #060606;
+}
+
+body.dark-theme .submenu .submenu-link {
+    color: #fff;
+}
+body.dark-theme .submenu .submenu-link:hover {
     color: #060606;
 }

@@ -13,11 +13,13 @@ function initializeSchedule(data) {
     let selectedClass = localStorage.getItem("selectedClass") || "5";
     let selectedLetter = localStorage.getItem("selectedLetter") || "A";
     let selectedGroup = localStorage.getItem("selectedGroup") || "1";
+    let savedTheme = localStorage.getItem("theme");
 
     function saveSelection() {
         localStorage.setItem("selectedClass", selectedClass);
         localStorage.setItem("selectedLetter", selectedLetter);
         localStorage.setItem("selectedGroup", selectedGroup);
+        localStorage.setItem("theme", savedTheme);
     }
 
     function updateSelectText() {
@@ -125,13 +127,33 @@ function initializeSchedule(data) {
         });
         activeButton.classList.add("active");
     }
+    function changeThemeColor() {
+        const themeToggle = document.getElementById("theme-toggle");
+        const body = document.body;
 
+        if (savedTheme === "dark") {
+            body.classList.add("dark-theme");
+        }
+
+        themeToggle.addEventListener("click", (e) => {
+            e.preventDefault();
+            body.classList.toggle("dark-theme");
+        
+            if (body.classList.contains("dark-theme")) {
+                savedTheme = "dark";
+                saveSelection();
+            } else {
+                savedTheme = "light";
+                saveSelection();
+            }
+        });
+    }
     renderClassButtons();
     renderLetterAndGroupButtons();
     updateSelectText();
+    changeThemeColor();
     createTable(data, selectedClass, selectedLetter, selectedGroup);
 }
-
 function createTable(data, grade, letter, group) {
     let shift, timeOfLessons;
     days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
