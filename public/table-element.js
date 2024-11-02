@@ -42,7 +42,6 @@ customElements.define(
 
             // Создаем тело таблицы
             let tbody = "<tbody>";
-            console.log(data)
             for (let index = 0; index < 7; index++) {
                 tbody += `<tr><td class = "table-num">${
                     index + 1
